@@ -1,0 +1,50 @@
+# Video / preview
+INPUT_VIDEO = "input_video.mp4"
+OUTPUT_VIDEO_FILE = "output/particle_counted.mp4"
+SHOW_PREVIEW = True
+SAVE_OUTPUT_VIDEO = True
+SCALE_FACTOR = 1.0
+
+# Background initialization and foreground mask
+INIT_FRAMES = 25
+BG_DIFF_THRESHOLD = 25
+THRESH_BINARY = 255
+MORPH_KERNEL_SIZE = 3
+MORPH_CLOSE_ITERATIONS = 2
+MORPH_OPEN_ITERATIONS = 1
+
+# Particle contour filtering
+MIN_CONTOUR_AREA = 35
+MAX_CONTOUR_AREA = 12000
+MIN_ASPECT_RATIO = 0.18
+MAX_ASPECT_RATIO = 5.5
+MIN_CIRCULARITY = 0.08
+
+# Counting region and display
+COUNTING_LINE_Y = 0.72       # fraction of image height
+COUNTING_LINE_MARGIN = 12
+TRACK_MAX_DISAPPEARED = 12
+TRACK_MAX_DISTANCE = 55
+TRACK_MATCH_IOU = 0.0        # centroid tracker uses distance
+COUNTING_COOLDOWN_FRAMES = 12
+
+# Classification thresholds. Tune with representative samples.
+SOYBEAN_LAB_B_MIN = 132       # yellow region in OpenCV LAB b channel
+SOYBEAN_LAB_L_MIN = 90
+BLACK_BEAN_LAB_L_MAX = 125
+BLACK_BEAN_MEAN_GRAY_MAX = 126
+BLACK_BEAN_DARK_PIXEL_THRESHOLD = 85
+BLACK_BEAN_DARK_PIXEL_RATIO = 0.50
+
+# UI colors (BGR)
+COLOR_SOYBEAN = (0, 215, 255)
+COLOR_BLACK_BEAN = (255, 120, 20)
+COLOR_UNKNOWN = (180, 180, 180)
+COLOR_HUD_BG = (20, 20, 20)
+COLOR_HUD_BORDER = (0, 255, 0)
+COLOR_COUNT_LINE = (0, 255, 0)
+
+FONT = 0  # cv2.FONT_HERSHEY_SIMPLEX
+FONT_SCALE = 0.55
+FONT_THICKNESS = 1
+BOX_PADDING = 5
